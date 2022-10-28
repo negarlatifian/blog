@@ -1,9 +1,9 @@
 ---
-    title: "Getting Started with NextJS",
+    title: "Getting Started with NextJS"
     excerpt:
-      "NextJS is a Rect framework for production. It makes building fullstack React apps and sites a breeze and ships with Server Side Rendering(SSR)",
-    image: "getting-started-nextjs.png",
-    date: "2022-10-27",
+      "NextJS is a Rect framework for production. It makes building fullstack React apps and sites a breeze and ships with Server Side Rendering(SSR)"
+    image: "getting-started-nextjs.png"
+    date: "2022-10-27"
     isFeatured: true
 ---
 
