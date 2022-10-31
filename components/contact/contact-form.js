@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Portal from '../HOC/portal';
 import Notification from '../ui/notification';
 import classes from './contact-form.module.css';
 
