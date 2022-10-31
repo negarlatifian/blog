@@ -1,4 +1,5 @@
-const handler = (req, res) => {
+import { MongoClient } from "mongodb";
+const handler = async (req, res) => {
   if (req.method === "POST") {
     const { email, name, message } = req.body;
     if (
@@ -16,7 +17,21 @@ const handler = (req, res) => {
       name,
       message,
     };
-    console.log(newMessage);
+    const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.swnb5ou.mongodb.net/?retryWrites=true&w=majority`;
+    const client = new MongoClient(uri);
+    try {
+      await client.connect();
+    } catch (error) {
+      res.status(500).json({ message: "Could not connect to the database" });
+      return;
+    }
+    const db = client.db();
+    try {
+      const result = await db.collection("messages").insertOne(newMessage);
+    } catch (error) {
+      client.close();
+      res.status(500).json({ message: "Could not store your message" });
+    }
     return res
       .status(201)
       .json({ message: "Message Sent Successfully", message: newMessage });

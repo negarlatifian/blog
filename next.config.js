@@ -2,6 +2,10 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
+  env: {
+    USERNAME: "negarl",
+    PASSWORD: "negarBlog22",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
