@@ -25,3 +25,5 @@
   }
 }
 ```
+
+7. with react-syntax-hihjlighter it's possible to style the code in markdown
