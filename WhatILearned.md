@@ -6,3 +6,22 @@
    npm i gray-matter
 5. const postSlug = fileName.replace(/\.md$/, "")
    for writing regex you don't need to put it in strings
+6. To overwrite how certain elements are rendered we can give ReactMarkdown special props called components. components accept an object where you tell ReactMarkdown how certain elements should be rendered.
+   this is an example of what the image props from markdown lookslike:
+
+```
+{
+  src: 'nextjs-file-based-routing.png',
+  alt: 'Create routes via your file + folder structure',
+  node: {
+    type: 'element',
+    tagName: 'img',
+    properties: {
+      src: 'nextjs-file-based-routing.png',
+      alt: 'Create routes via your file + folder structure'
+    },
+    children: [],
+    position: { start: [Object], end: [Object] }
+  }
+}
+```
