@@ -1,16 +1,16 @@
-import { MongoClient } from "mongodb";
+import { MongoClient } from 'mongodb';
 const handler = async (req, res) => {
-  if (req.method === "POST") {
+  if (req.method === 'POST') {
     const { email, name, message } = req.body;
     if (
       !email ||
-      !email.includes("@") ||
+      !email.includes('@') ||
       !name ||
-      name.trim() === "" ||
+      name.trim() === '' ||
       !message ||
-      message.trim() === ""
+      message.trim() === ''
     ) {
-      return res.status(422).json({ message: "Invalid Input" });
+      return res.status(422).json({ message: 'Invalid Input' });
     }
     const newMessage = {
       email,
@@ -22,19 +22,19 @@ const handler = async (req, res) => {
     try {
       await client.connect();
     } catch (error) {
-      res.status(500).json({ message: "Could not connect to the database" });
+      res.status(500).json({ message: 'Could not connect to the database' });
       return;
     }
     const db = client.db();
     try {
-      const result = await db.collection("messages").insertOne(newMessage);
+      const result = await db.collection('messages').insertOne(newMessage);
     } catch (error) {
       client.close();
-      res.status(500).json({ message: "Could not store your message" });
+      res.status(500).json({ message: 'Could not store your message' });
     }
     return res
       .status(201)
-      .json({ message: "Message Sent Successfully", message: newMessage });
+      .json({ message: 'Message Sent Successfully', message: newMessage });
   }
 };
 
