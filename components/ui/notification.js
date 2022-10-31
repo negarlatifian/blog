@@ -1,7 +1,14 @@
+import ReactDOM from 'react-dom';
+import { useEffect, useState } from 'react';
 import classes from './notification.module.css';
 
 const Notification = (props) => {
   const { title, message, status } = props;
+  const [domReady, setDomReady] = useState(false);
+
+  useEffect(() => {
+    setDomReady(true);
+  }, []);
 
   let statusClasses = '';
 
@@ -15,12 +22,15 @@ const Notification = (props) => {
 
   const cssClasses = `${classes.notification} ${statusClasses}`;
 
-  return (
-    <div className={cssClasses}>
-      <h2>{title}</h2>
-      <p>{message}</p>
-    </div>
-  );
+  return domReady
+    ? ReactDOM.createPortal(
+        <div className={cssClasses}>
+          <h2>{title}</h2>
+          <p>{message}</p>
+        </div>,
+        document.querySelector('#notifications')
+      )
+    : null;
 };
 
 export default Notification;
