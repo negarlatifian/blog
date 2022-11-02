@@ -17,7 +17,7 @@ const handler = async (req, res) => {
       name,
       message,
     };
-    const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.swnb5ou.mongodb.net/?retryWrites=true&w=majority`;
+    const uri = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@${process.env.CLUSTER}.swnb5ou.mongodb.net/${process.env.DATABASE}?retryWrites=true&w=majority`;
     const client = new MongoClient(uri);
     try {
       await client.connect();

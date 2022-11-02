@@ -26,4 +26,9 @@
 }
 ```
 
-7. with react-syntax-hihjlighter it's possible to style the code in markdown
+7. with react-syntax-highlighter package it's possible to style the code in markdown
+8. Deployment steps & considerations:
+   - Add page metadata, optimize code, remove unnecessary dependencies
+   - use environment variables for variable data
+   - Do a test build and test production-ready app locally or on some test server
+9. NextJs has built in lazy loading configuration, but when you're working with react that's a point you have to consider.
