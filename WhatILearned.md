@@ -32,3 +32,6 @@
    - use environment variables for variable data
    - Do a test build and test production-ready app locally or on some test server
 9. NextJs has built in lazy loading configuration, but when you're working with react that's a point you have to consider.
+10. React Syntax highlighter can have a fairly large footprint. In order to make the code lighter in the build process you can use the light version. the difference is that the original version supports all the programming languages which are probably not needed and you can import the languages you need for the light version seperately.
+11. npm start runs the production ready page
+12. Good hosting options for nextJs are vercel and netlify
