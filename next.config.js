@@ -5,10 +5,10 @@ module.exports = (phase) => {
       reactStrictMode: true,
       swcMinify: true,
       env: {
-        USERNAME: 'negarl',
-        PASSWORD: 'negarBlog22',
-        CLUSTER: 'cluster0',
-        DATABASE: 'blog-dev',
+        USERNAME: `${process.env.NEXT_PUBLIC_USERNAME}`,
+        PASSWORD: `${process.env.NEXT_PUBLIC_PASSWORD}`,
+        CLUSTER: `${process.env.NEXT_PUBLIC_CLUSTER}`,
+        DATABASE: `${process.env.NEXT_PUBLIC_DATABASE}-dev`,
       },
     };
   }
@@ -16,10 +16,10 @@ module.exports = (phase) => {
     reactStrictMode: true,
     swcMinify: true,
     env: {
-      USERNAME: 'negarl',
-      PASSWORD: 'negarBlog22',
-      CLUSTER: 'cluster0',
-      DATABASE: 'blog-prod',
+      USERNAME: `${process.env.NEXT_PUBLIC_USERNAME}`,
+      PASSWORD: `${process.env.NEXT_PUBLIC_USERNAME}`,
+      CLUSTER: `${process.env.NEXT_PUBLIC_CLUSTER}`,
+      DATABASE: `${process.env.NEXT_PUBLIC_DATABASE}`,
     },
   };
 };
